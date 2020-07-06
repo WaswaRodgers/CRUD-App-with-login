@@ -12,11 +12,8 @@
 		      <li class="nav-item active">
 		        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
 		      </li>
-		      <li class="nav-item">
-		        <a class="nav-link" href="#">About</a>
-		      </li>
 		      <div class="dropdown"> 
-		      	<button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown">Dropdown</button>
+		      	<button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown">About</button>
 		      	<!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span>
 		      	</a> -->
 		      	<div class="dropdown-menu"> 
