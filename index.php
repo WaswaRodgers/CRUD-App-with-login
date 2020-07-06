@@ -1,4 +1,5 @@
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
 <div class="container">
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-fixed-top">
 		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,16 +30,28 @@
 		  </div>
 		</nav> 
 		<div class="section bg-success pb-2">
-			<h1>MyDetails App</h1>
+			<h1 style="text-align: center;">MyDetails App</h1>
 		
 			<div class="row col-md-8 bg-primary m-auto" id="about">
-				About
+				<h3 style="text-align: center;">About</h3>
+				<p>This MyDetails App with login functionality. Performs all CRUD operations. This MyDetails App with login functionality. Performs all CRUD operations. This MyDetails App with login functionality. Performs all CRUD operations. This MyDetails App with login functionality. Performs all CRUD operations.</p>
+				
 			</div>
+			<hr/>
 			<div class="row col-md-8 bg-primary m-auto" id="goals">
-				Goals
+				<h3 style="text-align: center;">Goals</h3>
+				<div class="row col-md-12 justify-content-center pb-2">
+					<div class="col-md-3 mr-1 bg-white">Goal One</div>
+					<div class="col-md-3 mr-1 bg-white">Goal Two</div>
+					<div class="col-md-3 bg-white">Goal Three</div>
+				</div>
 			</div>
+			<hr/>
 			<div class="row col-md-8 bg-primary m-auto" id="contacts">
-				Contacts
+				<h3 style="text-align: center;">Contacts</h3>
+				<div>
+					kkgggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg
+				</div>
 			</div>
 			
 		</div>

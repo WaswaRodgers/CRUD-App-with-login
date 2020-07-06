@@ -21,6 +21,8 @@ header nav ul li{
 }
 
 footer {
-	background: cyan;
+	background: grey;
+	color: white;
+	text-align: center;
 }
 
