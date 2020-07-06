@@ -48,5 +48,7 @@
 		    </form>
 		  </div>
 		</nav> 
-</div>
+
+		
 <?php include_once('includes/footer.php') ?>
+</div>
