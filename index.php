@@ -4,6 +4,7 @@
 <title>MyDetails App</title>
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="includes/bootstrap-glyphicons.css">
 <div class="container">
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-fixed-top">
 		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,6 +34,7 @@
 		    </ul>
 		  </div>
 		</nav> 
+		<?php include_once('includes/carousel.html'); ?>
 		<div class="section bg-success pb-2">
 			<h1 style="text-align: center;">MyDetails App</h1>
 		
@@ -59,7 +61,9 @@
 			</div>
 			
 		</div>
+		
+		<?php include_once('includes/ourgoals.html'); ?>
 
 
-<?php include_once('includes/footer.php') ?>
+		<?php include_once('includes/footer.php'); ?>
 </div>

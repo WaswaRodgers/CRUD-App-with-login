@@ -56,8 +56,17 @@
 
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label for="location">Location</label>
-                                            <input class="form-control" type="text" name="location" id="location" placeholder="Location">
+                                            <label for="location">Location(County)</label>
+                                            <select class="form-control" type="text" name="location" id="location" placeholder="Location">
+                                                <option value="Mombasa">Mombasa</option>
+                                                <option value="Nairobi">Nairobi</option>
+                                                <option value="Kisumu">Kisumu</option>
+                                                <option value="Lamu">Lamu</option>
+                                                <option value="Bungoma">Bungoma</option>
+                                                <option value="Kakamega">Kakamega</option>
+                                                <option value="Moyale">Moyale</option>
+                                                <option value="Migori">Migori</option>
+                                            </select>
                                             <span class="text-danger locationerror"></span>
                                         </div>
                                     </div>
