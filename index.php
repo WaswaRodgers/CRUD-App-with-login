@@ -33,6 +33,7 @@
 		    </ul>
 		  </div>
 		</nav> 
+		<?php include_once('includes/carousel.html'); ?>
 		<div class="section bg-success pb-2">
 			<h1 style="text-align: center;">MyDetails App</h1>
 		
