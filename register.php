@@ -28,11 +28,11 @@
             </div>
         </nav>
         <div class="container">
-            <h1 style="text-align: center;">Login to Proceed!</h1>
+            <h1 style="text-align: center;">Register for an account!</h1>
             <div class="row mt-5">
                 <div class="col-md-12">
                     <div class="row mb-3">
-                        <div class="col-md-12 bg-warning text-dark">
+                        <div class="col-md-12 bg-light text-dark">
                             <div class='messagesuccessone' role='alert'></div>
                             <div class='messagefail' role='alert'></div>
                             <form id="ajaxpost" method="post" enctype="multipart/form-data" action="">
@@ -48,19 +48,46 @@
 
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label for="email">Email</label>
-                                            <input class="form-control" type="email" name="emailtext" 
-                                            id="email" placeholder="Please type your email">
-                                            <span class="text-danger emailerror"></span>
+                                            <label for="lastname">Last Name</label>
+                                            <input class="form-control" type="text" name="lastname" id="lastname" placeholder="Last Name">
+                                            <span class="text-danger lastnameerror"></span>
                                         </div>
                                     </div>
 
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label for="password">Password</label>
-                                            <input class="form-control" type="password" name="password" 
-                                            id="password" placeholder="********">
-                                            <span class="text-danger passworderror"></span>
+                                            <label for="location">Location</label>
+                                            <input class="form-control" type="text" name="location" id="location" placeholder="Location">
+                                            <span class="text-danger locationerror"></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="row col-md-12">
+                                        <div class="col-md-4">
+                                            <div class="form-group  has-error">
+                                                <label for="address">Address</label>
+                                                <textarea class="form-control form-control-danger" type="text" 
+                                                name="address" id="address" rows="2" placeholder="Address"></textarea>
+                                                <span class="text-danger addresserror"></span>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="email">Email</label>
+                                                <input class="form-control" type="email" name="emailtext" 
+                                                id="email" placeholder="Please type your email">
+                                                <span class="text-danger emailerror"></span>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="password">Password</label>
+                                                <input class="form-control" type="password" name="password" 
+                                                id="password" placeholder="********">
+                                                <span class="text-danger passworderror"></span>
+                                            </div>
                                         </div>
                                     </div>
 
@@ -71,6 +98,14 @@
                                             id="confirmpassword" placeholder="********">
                                             <span class="text-danger conpasserror"></span>
                                         </div>
+                                    </div>
+
+                                    <div class="row col-md-12">
+                                        <div class="radio col-md-4">
+                                            <label for="gender">Gender</label>
+                                            <input type="radio" name="gender" id="male" value="m">Male
+                                            <input type="radio" name="gender" id="female" value="f">Female
+                                        </div> 
                                     </div>
 
                                     <div class="col-md-12">
