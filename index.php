@@ -14,13 +14,9 @@
 		      <div class="dropdown"> 
 		      	<button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown">About</button>
 		      	<div class="dropdown-menu"> 
-		      		<a class="dropdown-item" href="#">Action</a> 
-		      		<a class="dropdown-item" href="#">Another action</a> 
-		      		<a class="dropdown-item" href="#">Something else here</a> 
-		      		<li role="separator" class="dropdown-divider"></li> 
-		      		<a class="dropdown-item" href="#">Separated link</a> 
-		      		<li role="separator" class="dropdown-divider"></li> 
-		      		<a class="dropdown-item" href="#">One more separated link</a> 
+		      		<a class="dropdown-item" href="#">About CRUD</a> 
+		      		<a class="dropdown-item" href="#">Goals</a> 
+		      		<a class="dropdown-item" href="#">Contacts</a> 
 		      	</div> 
 		      </div> 
 		      <li class="nav-item">
