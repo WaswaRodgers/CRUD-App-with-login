@@ -91,33 +91,30 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-md-12">
-                                        <div class="form-group">
+                                    <div class="row col-md-12">
+                                        <div class="form-group col-md-4">
                                             <label for="confirmpassword">Confirm Password</label>
                                             <input class="form-control" type="password" name="confirmpassword" 
                                             id="confirmpassword" placeholder="********">
                                             <span class="text-danger conpasserror"></span>
                                         </div>
-                                    </div>
-
-                                    <div class="row col-md-12">
-                                        <div class="radio col-md-4">
-                                            <label for="gender">Gender</label>
-                                            <input type="radio" name="gender" id="male" value="m">Male
-                                            <input type="radio" name="gender" id="female" value="f">Female
+                                         <div class="radio col-md-4">
+                                            <label for="gender">Gender</label><br/>
+                                            <input type="radio" name="gender" id="male" value="m"> Male
+                                            <input type="radio" name="gender" id="female" value="f"> Female
+                                            <input type="radio" name="gender" id="none" value="n"> Prefer not to answer
                                         </div> 
-                                    </div>
-
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label for="phone">Phone number</label>
-                                            <input class="form-control" type="text" name="phone" id="phone" 
-                                            placeholder="Phone number">
-                                            <span class="text-danger phoneerror"></span>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="phone">Phone number</label>
+                                                <input class="form-control" type="text" name="phone" id="phone" 
+                                                placeholder="Phone number">
+                                                <span class="text-danger phoneerror"></span>
+                                            </div>
                                         </div>
                                     </div>
 
-                                    <div class="col-md-12">
+                                    <div class="col-md-4">
                                         <div class="form-group">
                                             <label for="avatar">Profile photo</label>
                                             <input class="form-control" type="file" name="avatar" 
