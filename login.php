@@ -29,8 +29,12 @@
 				<div class="row col-md-12 form-group"> 
 					<label for="password">Password</label> 
 					<input type="password" class="form-control" id="password" name="password" placeholder=""> 
-				</div > 
-				<button type="submit" class="btn btn-primary" name="login">Login</button> 
+				</div> 
+				<div class="col-md-12 text-right">
+                        <input type="hidden" value="1" name="lg">
+                        <button name="login" type="submit" class="btn btn-success">Login</button>
+                    </div>
+                    <a href="forgotpass.php">Forgot password?</a>
 			</form>
 			</div>
 			
