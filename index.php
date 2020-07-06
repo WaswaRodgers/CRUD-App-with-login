@@ -28,6 +28,20 @@
 		    </ul>
 		  </div>
 		</nav> 
+		<div class="section bg-success pb-2">
+			<h1>MyDetails App</h1>
+		
+			<div class="row col-md-8 bg-primary m-auto" id="about">
+				About
+			</div>
+			<div class="row col-md-8 bg-primary m-auto" id="goals">
+				Goals
+			</div>
+			<div class="row col-md-8 bg-primary m-auto" id="contacts">
+				Contacts
+			</div>
+			
+		</div>
 
 
 <?php include_once('includes/footer.php') ?>
