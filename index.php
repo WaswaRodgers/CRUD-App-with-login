@@ -1,3 +1,7 @@
+<meta charset="utf-8"> 
+<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MyDetails App</title>
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <div class="container">
@@ -10,21 +14,21 @@
 		  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
 		    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 		      <li class="nav-item active">
-		        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+		        <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
 		      </li>
 		      <div class="dropdown"> 
 		      	<button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown">About</button>
 		      	<div class="dropdown-menu"> 
-		      		<a class="dropdown-item" href="#">About CRUD</a> 
-		      		<a class="dropdown-item" href="#">Goals</a> 
-		      		<a class="dropdown-item" href="#">Contacts</a> 
+		      		<a class="dropdown-item" href="#about">About CRUD</a> 
+		      		<a class="dropdown-item" href="#goals">Goals</a> 
+		      		<a class="dropdown-item" href="#contacts">Contacts</a> 
 		      	</div> 
 		      </div> 
 		      <li class="nav-item">
-		        <a class="nav-link" href="#">Login</a>
+		        <a class="nav-link" href="login.php">Login</a>
 		      </li>
 		      <li class="nav-item">
-		        <a class="nav-link" href="#">Register</a>
+		        <a class="nav-link" href="register.php">Register</a>
 		      </li>
 		    </ul>
 		  </div>
