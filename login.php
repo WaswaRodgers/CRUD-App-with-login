@@ -1,6 +1,6 @@
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="css/style.css">
-<div class="container">
+<div class="container-fluid">
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-fixed-top">
 		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
 		    <span class="navbar-toggler-icon"></span>
@@ -20,21 +20,21 @@
 		</nav> 
 		<div class="section pb-2">
 			<h1 style="text-align: center;">Login to Proceed!</h1>
-			<div class="row col-md-12 justify-content-center bg-secondary">
-			<form class=""> 
-				<div class="row col-md-12 form-group"> 
-					<label for="username">Username</label> 
-					<input type="text" class="form-control" id="username" name="username" placeholder="Username"> 
-				</div> 
-				<div class="row col-md-12 form-group"> 
-					<label for="password">Password</label> 
-					<input type="password" class="form-control" id="password" name="password" placeholder=""> 
-				</div> 
-				<div class="col-md-12 text-right">
-                        <input type="hidden" value="1" name="lg">
-                        <button name="login" type="submit" class="btn btn-success">Login</button>
-                    </div>
-                    <a href="forgotpass.php">Forgot password?</a>
+			<div class="row col-md-12 justify-content-center bg-secondary text-center">
+			<form class="" method="post" action=""> 
+				<div class="row col-md-8 m-auto">
+					<div class="row col-md-12 form-group"> 
+						<label for="username">Username</label> 
+						<input type="text" class="form-control" id="username" name="username" placeholder="Username"> 
+					</div> 
+					<div class="row col-md-12 form-group"> 
+						<label for="password">Password</label> 
+						<input type="password" class="form-control" id="password" name="password" placeholder=""> 
+					</div> 
+					<div class="row col-md-12">
+	                    <button name="login" type="submit" class="btn btn-success btn-block">Login</button>
+	                </div>
+				</div>
 			</form>
 			</div>
 			
@@ -42,5 +42,6 @@
 		</div>
 
 
-<?php include_once('includes/footer.php') ?>
+
 </div>
+<?php include_once('includes/footer.php') ?>
