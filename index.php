@@ -60,7 +60,9 @@
 			</div>
 			
 		</div>
+		
+		<?php include_once('includes/ourgoals.html'); ?>
 
 
-<?php include_once('includes/footer.php') ?>
+		<?php include_once('includes/footer.php'); ?>
 </div>
