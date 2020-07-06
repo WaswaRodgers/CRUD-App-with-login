@@ -20,22 +20,12 @@
 		      	</div> 
 		      </div> 
 		      <li class="nav-item">
-		        <a class="nav-link" href="#">Services</a>
+		        <a class="nav-link" href="#">Login</a>
 		      </li>
 		      <li class="nav-item">
 		        <a class="nav-link" href="#">Blog</a>
 		      </li>
-		      <li class="nav-item">
-		        <a class="nav-link" href="#">Contacts</a>
-		      </li>
-		      <li class="nav-item">
-		        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-		      </li>
 		    </ul>
-		    <form class="form-inline my-2 my-lg-0">
-		      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-		      <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
-		    </form>
 		  </div>
 		</nav> 
 
