@@ -20,17 +20,17 @@
 		</nav> 
 		<div class="section pb-2">
 			<h1 style="text-align: center;">Login to Proceed!</h1>
-			<div class="row col-md-8 justify-content-center">
-				<form class=""> 
-				<div class="form-group"> 
+			<div class="row col-md-12 justify-content-center bg-secondary">
+			<form class=""> 
+				<div class="row col-md-12 form-group"> 
 					<label for="username">Username</label> 
 					<input type="text" class="form-control" id="username" name="username" placeholder="Username"> 
 				</div> 
-				<div class="form-group"> 
+				<div class="row col-md-12 form-group"> 
 					<label for="password">Password</label> 
 					<input type="password" class="form-control" id="password" name="password" placeholder=""> 
 				</div > 
-				<button type="submit" class="btn btn-default" name="login">Login</button> 
+				<button type="submit" class="btn btn-primary" name="login">Login</button> 
 			</form>
 			</div>
 			
