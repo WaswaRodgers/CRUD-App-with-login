@@ -1,5 +1,4 @@
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
 <div class="container">
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-fixed-top">
 		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
@@ -14,8 +13,6 @@
 		      </li>
 		      <div class="dropdown"> 
 		      	<button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown">About</button>
-		      	<!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span>
-		      	</a> -->
 		      	<div class="dropdown-menu"> 
 		      		<a class="dropdown-item" href="#">Action</a> 
 		      		<a class="dropdown-item" href="#">Another action</a> 

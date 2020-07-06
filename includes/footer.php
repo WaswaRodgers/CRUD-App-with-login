@@ -1,3 +1,6 @@
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/popper.min.js"></script>
 <footer>
 	<address>
 		Designed by <a href="#">Waswa Rodgers</a><br/>
