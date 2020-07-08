@@ -1,6 +1,81 @@
 <?php
 include_once('includes/connect.php');
+
+if(isset($_POST['register'])){
+
+    $firstname = $_POST['firstname'];
+    $lastname = $_POST['lastname'];
+    $location = $_POST['location'];
+    $address = $_POST['address'];
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $confirmpassword = $_POST['confirmpassword'];
+    $gender = $_POST['gender'];
+    $phone = $_POST['phone'];
+    $image_name = $_FILES['profile']['name'];
+    $image_size = $_FILES['profile']['size'];
+    $image_temp = $_FILES['profile']['tmp_name'];
+    $image_path = 'images/'.$image_name;
+    $image_type = $_FILES['profile']['type'];
+    $image_error = $_FILES['profile']['error'];
+    $image_ext = explode(".", $image_name);
+    $actual_ext = strtolower(end($image_ext));
+    $allowed_ext = array("jpg", "jpeg", "png", "gif");
+    $response = array();
+
+    move_uploaded_file($image_temp, $image_path);
+    
+
+
+    if (empty($name)) {
+        $response['name_empty'] .= "Name field cannot be empty!";
+    }
+
+    if (empty($username)) {
+        $response['username_empty'] .= "Username field cannot be empty!";
+    }
+
+    if (empty($email)) {
+        $response['email_empty'] .= "Email field cannot be empty!";
+    }
+
+    if (!empty($email)) {
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $response['email_empty'] .= "Email is invalid!";
+        }
+    }
+
+    if (empty($image_name)) {
+        $response['image_empty'] .= "Profile field cannot be empty!";
+    }
+
+
+
+
+    if ($response == null) {
+        $sql = "INSERT INTO user_information(name, username, email, image) VALUES('$name', '$username', '$email', '$image_name')";
+        $query = mysqli_query($db_connection, $sql);
+
+        if ($query) {
+            header("Location: login.php");
+        } else {
+            echo "Registration Failed!";
+        }
+    } else {
+        echo "<span style = 'color:red;'>Error occurred, check if all fields are filled.</span>";
+    }
+
+}
+
+
+if(isset($_POST['login'])) {
+
+    header("Location: login.php");
+}
 ?>
+?>
+
 <!doctype html>
 <html>
     <head>
@@ -87,7 +162,7 @@ include_once('includes/connect.php');
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="email">Email</label>
-                                                <input class="form-control" type="email" name="emailtext" 
+                                                <input class="form-control" type="email" name="email" 
                                                 id="email" placeholder="Please type your email">
                                                 <span class="text-danger emailerror"></span>
                                             </div>
@@ -131,9 +206,9 @@ include_once('includes/connect.php');
 
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="avatar">Profile photo</label>
-                                            <input class="form-control" type="file" name="avatar" 
-                                            id="avatar">
+                                            <label for="profile">Profile photo</label>
+                                            <input class="form-control" type="file" name="profile" 
+                                            id="profile">
                                             <span class="text-danger filetypeerror"></span>
                                             <span class="text-danger imagesizeerror"></span>
                                         </div>
@@ -142,7 +217,7 @@ include_once('includes/connect.php');
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12 text-right">
-                                        <button type="submit" class="btn btn-danger">Submit</button>
+                                        <button type="submit" name="register" class="btn btn-danger">Submit</button>
                                     </div>
                                 </div>
                             </form>
