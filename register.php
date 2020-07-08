@@ -28,8 +28,12 @@ if(isset($_POST['register'])){
     
 
 
-    if (empty($name)) {
-        $response['name_empty'] .= "Name field cannot be empty!";
+    if (empty($firstname)) {
+        $response['fname_empty'] .= "First Name field cannot be empty!";
+    }
+
+    if (empty($lastname)) {
+        $response['lname_empty'] .= "Last Name field cannot be empty!";
     }
 
     if (empty($username)) {
