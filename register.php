@@ -7,7 +7,6 @@ if(isset($_POST['register'])){
     $lastname = $_POST['lastname'];
     $location = $_POST['location'];
     $address = $_POST['address'];
-    $username = $_POST['username'];
     $email = $_POST['email'];
     $password = $_POST['password'];
     $confirmpassword = $_POST['confirmpassword'];
@@ -58,7 +57,7 @@ if(isset($_POST['register'])){
 
 
     if ($response == null) {
-        $sql = "INSERT INTO user_information(name, username, email, image) VALUES('$name', '$username', '$email', '$image_name')";
+        $sql = "INSERT INTO mydetails(firstname, lastname, gender, location, email, phone, address, password, image) VALUES('$firstname', '$lastname', '$gender', '$location', '$email', '$phone', '$address', '$password', '$image_name')";
         $query = mysqli_query($db_connection, $sql);
 
         if ($query) {
