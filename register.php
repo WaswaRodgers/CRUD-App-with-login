@@ -77,7 +77,7 @@ if(isset($_POST['login'])) {
     header("Location: login.php");
 }
 ?>
-?>
+
 
 <!doctype html>
 <html>
