@@ -1,3 +1,6 @@
+<?php
+include_once('includes/connect.php');
+?>
 <!doctype html>
 <html>
     <head>
