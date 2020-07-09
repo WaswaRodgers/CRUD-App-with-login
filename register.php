@@ -56,6 +56,7 @@ if(isset($_POST['register'])){
 
 
 
+
     if ($response == null) {
         $sql = "INSERT INTO mydetails(firstname, lastname, gender, location, email, phone, address, password, image) VALUES('$firstname', '$lastname', '$gender', '$location', '$email', '$phone', '$address', '$password', '$image_name')";
         $query = mysqli_query($db_connection, $sql);
@@ -70,6 +71,7 @@ if(isset($_POST['register'])){
     }
 
 }
+
 
 
 if(isset($_POST['login'])) {
@@ -123,7 +125,7 @@ if(isset($_POST['login'])) {
                                             <label for="firstname">First name</label>
                                             <input class="form-control form-control-danger" type="text" 
                                             name="firstnametext" id="firstname" placeholder="First name">
-                                            <span class="text-danger firstnameerror"></span>
+                                            <span class="text-danger firstnameerror"><?php echo $response; ?></span>
                                         </div>
                                     </div>
 
