@@ -33,8 +33,38 @@ if(isset($_POST['register'])){
         $response['lname_empty'] .= "Last Name field cannot be empty!";
     }
 
+    if (empty($location)) {
+        $response['location_empty'] .= "Location field cannot be empty!";
+    }
+
+    if (empty($gender)) {
+        $response['gender_empty'] .= "Gender cannot be empty!";
+    }
+
+    if (empty($address)) {
+        $response['address_empty'] .= "Address field cannot be empty!";
+    }
+
+     if (empty($password)) {
+        $response['password_empty'] .= "Please enter Password!";
+    }
+
+    if ($password !== $confirmpassword) {
+        $response['confirmpassword'] .= "The passwords must match!";
+    }
+
     if (empty($username)) {
         $response['username_empty'] .= "Username field cannot be empty!";
+    }
+
+    if(empty($phone)) {
+        $response['phone_empty'] .= "Phone field cannot be empty!";
+    }
+
+    if(!empty($pone)) {
+        if(!is_numeric($phone)) {
+            $response['phone_invalid'] .= "Please enter a valid phone number!";
+        }
     }
 
     if (empty($email)) {
