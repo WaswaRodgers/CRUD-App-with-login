@@ -21,9 +21,7 @@ if(isset($_POST['register'])){
     $image_ext = explode(".", $image_name);
     $actual_ext = strtolower(end($image_ext));
     $allowed_ext = array("jpg", "jpeg", "png", "gif");
-    $response = array();
-
-    move_uploaded_file($image_temp, $image_path);
+    $response;
     
 
 
@@ -58,13 +56,18 @@ if(isset($_POST['register'])){
 
 
     if ($response == null) {
-        $sql = "INSERT INTO mydetails(firstname, lastname, gender, location, email, phone, address, password, image) VALUES('$firstname', '$lastname', '$gender', '$location', '$email', '$phone', '$address', '$password', '$image_name')";
-        $query = mysqli_query($db_connection, $sql);
+        if(move_uploaded_file($image_temp, $image_path)) {
+            $sql = "INSERT INTO mydetails(firstname, lastname, gender, location, email, phone, address, password, image) VALUES('$firstname', '$lastname', '$gender', '$location', '$email', '$phone', '$address', '$password', '$image_name')";
+            $query = mysqli_query($db_connection, $sql);
+            print_r($query);
 
-        if ($query) {
-            header("Location: login.php");
+            if ($query) {
+                header("Location: login.php");
+            } else {
+                echo "Registration Failed!";
+            }
         } else {
-            echo "Registration Failed!";
+            echo "Image was not uploaded!";
         }
     } else {
         echo "<span style = 'color:red;'>Error occurred, check if all fields are filled.</span>";
@@ -125,7 +128,7 @@ if(isset($_POST['login'])) {
                                             <label for="firstname">First name</label>
                                             <input class="form-control form-control-danger" type="text" 
                                             name="firstnametext" id="firstname" placeholder="First name">
-                                            <span class="text-danger firstnameerror"><?php echo $response; ?></span>
+                                            <span class="text-danger firstnameerror"><?php echo $response['fname_empty']; ?></span>
                                         </div>
                                     </div>
 
