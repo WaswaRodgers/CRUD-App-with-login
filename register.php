@@ -20,12 +20,11 @@ if(isset($_POST['register'])){
     $image_error = $_FILES['profile']['error'];
     $image_ext = explode(".", $image_name);
     $actual_ext = strtolower(end($image_ext));
+    $imageSize = 5000 * 5000;
     $allowed_ext = array("jpg", "jpeg", "png", "gif");
-    $response = array();
-
-    move_uploaded_file($image_temp, $image_path);
+    $response;
     
-
+    move_uploaded_file($image_temp, $image_path);
 
     if (empty($firstname)) {
         $response['fname_empty'] .= "First Name field cannot be empty!";
@@ -35,8 +34,34 @@ if(isset($_POST['register'])){
         $response['lname_empty'] .= "Last Name field cannot be empty!";
     }
 
-    if (empty($username)) {
-        $response['username_empty'] .= "Username field cannot be empty!";
+    if (empty($location)) {
+        $response['location_empty'] .= "Location field cannot be empty!";
+    }
+
+    if (empty($gender)) {
+        $response['gender_empty'] .= "Gender cannot be empty!";
+    }
+
+    if (empty($address)) {
+        $response['address_empty'] .= "Address field cannot be empty!";
+    }
+
+     if (empty($password)) {
+        $response['password_empty'] .= "Please enter Password!";
+    }
+
+    if ($password !== $confirmpassword) {
+        $response['confirmpassword'] .= "The passwords must match!";
+    }
+
+    if(empty($phone)) {
+        $response['phone_empty'] .= "Phone field cannot be empty!";
+    }
+
+    if(!empty($phone)) {
+        if(!is_numeric($phone)) {
+            $response['phone_invalid'] .= "Please enter a valid phone number!";
+        }
     }
 
     if (empty($email)) {
@@ -45,7 +70,7 @@ if(isset($_POST['register'])){
 
     if (!empty($email)) {
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $response['email_empty'] .= "Email is invalid!";
+            $response['email_invalid'] .= "Email is invalid!";
         }
     }
 
@@ -53,18 +78,32 @@ if(isset($_POST['register'])){
         $response['image_empty'] .= "Profile field cannot be empty!";
     }
 
+    if(in_array($actual_ext, $allowed_ext) == false){
+        $response['Filetype'] .= "Invalid Image formart";
+    }
+
+    if($image_size > $imageSize){
+        $response['Image_size'].="The image size is too big";
+    }
+
+    print_r($response);
 
 
 
 
-    if ($response == null) {
-        $sql = "INSERT INTO mydetails(firstname, lastname, gender, location, email, phone, address, password, image) VALUES('$firstname', '$lastname', '$gender', '$location', '$email', '$phone', '$address', '$password', '$image_name')";
-        $query = mysqli_query($db_connection, $sql);
+    if ($response == null || $response == true) {
+        if(move_uploaded_file($image_temp, $image_path)) {
+            $sql = "INSERT INTO `mydetails` (`firstname`, `lastname`, `gender`, `location`, `email`, `phone`, `address`, `password`, `image`) VALUES('$firstname', '$lastname', '$gender', '$location', '$email', '$phone', '$address', '$password', '$image_name')";
+            $query = mysqli_query($db_connection, $sql);
+            print_r($query);
 
-        if ($query) {
-            header("Location: login.php");
+            if ($query) {
+                header("Location: login.php");
+            } else {
+                echo "Registration Failed!";
+            }
         } else {
-            echo "Registration Failed!";
+            echo "Image was not uploaded!";
         }
     } else {
         echo "<span style = 'color:red;'>Error occurred, check if all fields are filled.</span>";
@@ -123,9 +162,9 @@ if(isset($_POST['login'])) {
                                     <div class="col-md-4">
                                         <div class="form-group  has-error">
                                             <label for="firstname">First name</label>
-                                            <input class="form-control form-control-danger" type="text" 
-                                            name="firstnametext" id="firstname" placeholder="First name">
-                                            <span class="text-danger firstnameerror"><?php echo $response; ?></span>
+                                            <input class="form-control" type="text" 
+                                            name="firstname" id="firstname" placeholder="First name">
+                                            <span class="text-danger firstnameerror"><?php echo $response['fname_empty']; ?></span>
                                         </div>
                                     </div>
 
@@ -133,7 +172,7 @@ if(isset($_POST['login'])) {
                                         <div class="form-group">
                                             <label for="lastname">Last Name</label>
                                             <input class="form-control" type="text" name="lastname" id="lastname" placeholder="Last Name">
-                                            <span class="text-danger lastnameerror"></span>
+                                            <span class="text-danger lastnameerror"><?php echo $response['lname_empty']; ?></span>
                                         </div>
                                     </div>
 
@@ -150,7 +189,7 @@ if(isset($_POST['login'])) {
                                                 <option value="Moyale">Moyale</option>
                                                 <option value="Migori">Migori</option>
                                             </select>
-                                            <span class="text-danger locationerror"></span>
+                                            <span class="text-danger locationerror"><?php echo $response['location_empty']; ?></span>
                                         </div>
                                     </div>
 
@@ -158,9 +197,9 @@ if(isset($_POST['login'])) {
                                         <div class="col-md-4">
                                             <div class="form-group  has-error">
                                                 <label for="address">Address</label>
-                                                <textarea class="form-control form-control-danger" type="text" 
+                                                <textarea class="form-control" type="text" 
                                                 name="address" id="address" rows="2" placeholder="Address"></textarea>
-                                                <span class="text-danger addresserror"></span>
+                                                <span class="text-danger addresserror"><?php echo $response['address_empty']; ?></span>
                                             </div>
                                         </div>
 
@@ -169,7 +208,8 @@ if(isset($_POST['login'])) {
                                                 <label for="email">Email</label>
                                                 <input class="form-control" type="email" name="email" 
                                                 id="email" placeholder="Please type your email">
-                                                <span class="text-danger emailerror"></span>
+                                                <span class="text-danger emailerror"><?php echo $response['email_empty']; ?></span>
+                                                <span class="text-danger emailerror"><?php echo $response['email_invalid']; ?></span>
                                             </div>
                                         </div>
 
@@ -178,7 +218,7 @@ if(isset($_POST['login'])) {
                                                 <label for="password">Password</label>
                                                 <input class="form-control" type="password" name="password" 
                                                 id="password" placeholder="********">
-                                                <span class="text-danger passworderror"></span>
+                                                <span class="text-danger passworderror"><?php echo $response['password_empty']; ?></span>
                                             </div>
                                         </div>
                                     </div>
@@ -188,21 +228,26 @@ if(isset($_POST['login'])) {
                                             <label for="confirmpassword">Confirm Password</label>
                                             <input class="form-control" type="password" name="confirmpassword" 
                                             id="confirmpassword" placeholder="********">
-                                            <span class="text-danger conpasserror"></span>
+                                            <span class="text-danger conpasserror"><?php echo $response['confirmpassword']; ?></span>
                                         </div>
-                                         <div class="radio col-md-4">
-                                            <label for="gender">Gender</label><br/>
-                                            <input type="radio" name="gender" id="male" value="m"> Male
-                                            <input type="radio" name="gender" id="female" value="f"> Female
-                                            <input type="radio" name="gender" id="none" value="n"> Prefer not to answer
+
+                                    <div class="row col-md-12">
+                                        <div class="radio col-md-4">
+                                            <label for="gender">Gender</label>
+                                            <input type="radio" name="gender" id="male" value="m">Male
+                                            <input type="radio" name="gender" id="female" value="f">Female
+                                            <span class="text-danger passworderror"><?php echo $response['gender_empty']; ?></span>
                                         </div> 
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label for="phone">Phone number</label>
-                                                <input class="form-control" type="text" name="phone" id="phone" 
-                                                placeholder="Phone number">
-                                                <span class="text-danger phoneerror"></span>
-                                            </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="phone">Phone number</label>
+                                            <input class="form-control" type="text" name="phone" id="phone" 
+                                            placeholder="Phone number">
+                                            <span class="text-danger phoneerror"><?php echo $response['phone_empty']; ?></span>
+                                            <span class="text-danger phoneerror"><?php echo $response['phone_invalid']; ?></span>
+
                                         </div>
                                     </div>
 
@@ -211,8 +256,9 @@ if(isset($_POST['login'])) {
                                             <label for="profile">Profile photo</label>
                                             <input class="form-control" type="file" name="profile" 
                                             id="profile">
-                                            <span class="text-danger filetypeerror"></span>
-                                            <span class="text-danger imagesizeerror"></span>
+                                            <span class="text-danger filetypeerror"><?php echo $response['Filetype']; ?></span>
+                                            <span class="text-danger imagesizeerror"><?php echo $response['Image_size']; ?></span>
+                                            <span class="text-danger imagesizeerror"><?php echo $response['image_empty']; ?></span>
                                         </div>
                                     </div>
 
