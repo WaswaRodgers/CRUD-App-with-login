@@ -21,7 +21,7 @@ if(isset($_POST['register'])){
     $image_ext = explode(".", $image_name);
     $actual_ext = strtolower(end($image_ext));
     $imageSize = 5000 * 5000;
-    $allowed_ext = array("jpg", "jpeg", "png", "gif");
+    $allowed_ext = ["jpg", "jpeg", "png", "gif"];
     $response;
     
     move_uploaded_file($image_temp, $image_path);
@@ -86,14 +86,13 @@ if(isset($_POST['register'])){
         $response['Image_size'].="The image size is too big";
     }
 
-    print_r($response);
+
+    print_r($_FILES);
 
 
-
-
-    if ($response == null || $response == true) {
+    if ($response == null) {
         if(move_uploaded_file($image_temp, $image_path)) {
-            $sql = "INSERT INTO `mydetails` (`firstname`, `lastname`, `gender`, `location`, `email`, `phone`, `address`, `password`, `image`) VALUES('$firstname', '$lastname', '$gender', '$location', '$email', '$phone', '$address', '$password', '$image_name')";
+            $sql = "INSERT INTO mydetails (firstname, lastname, gender, location, email, phone, address, password, image) VALUES('$firstname', '$lastname', '$gender', '$location', '$email', '$phone', '$address', '$password', '$image_name')";
             $query = mysqli_query($db_connection, $sql);
             print_r($query);
 
@@ -232,7 +231,7 @@ if(isset($_POST['login'])) {
                                         </div>
 
                                     <div class="row col-md-12">
-                                        <div class="radio col-md-4">
+                                        <div class="form-group col-md-4">
                                             <label>Gender</label>
                                             <input type="radio" name="gender" id="male" value="m">Male
                                             <input type="radio" name="gender" id="female" value="f">Female
@@ -265,7 +264,7 @@ if(isset($_POST['login'])) {
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12 text-right">
-                                        <button type="submit" name="register" class="btn btn-danger">Submit</button>
+                                        <input type="submit" name="register" class="btn btn-danger" value="Submit">
                                     </div>
                                 </div>
                             </form>
