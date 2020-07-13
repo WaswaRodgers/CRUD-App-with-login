@@ -3,15 +3,15 @@ include_once('includes/connect.php');
 
 if(isset($_POST['register'])){
 
-    $firstname = $_POST['firstname'];
-    $lastname = $_POST['lastname'];
-    $location = $_POST['location'];
-    $address = $_POST['address'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $confirmpassword = $_POST['confirmpassword'];
-    $gender = $_POST['gender'];
-    $phone = $_POST['phone'];
+    $firstname = mysqli_real_escape_string($db_connection, $_POST['firstname']);
+    $lastname = mysqli_real_escape_string($db_connection, $_POST['lastname']);
+    $location = mysqli_real_escape_string($db_connection, $_POST['location']);
+    $address = mysqli_real_escape_string($db_connection, $_POST['address']);
+    $email = mysqli_real_escape_string($db_connection, $_POST['email']);
+    $password = mysqli_real_escape_string($db_connection, $_POST['password']);
+    $confirmpassword = mysqli_real_escape_string($db_connection, $_POST['confirmpassword']);
+    $gender = mysqli_real_escape_string($db_connection, $_POST['gender']);
+    $phone = mysqli_real_escape_string($db_connection, $_POST['phone']);
     $image_name = $_FILES['profile']['name'];
     $image_size = $_FILES['profile']['size'];
     $image_temp = $_FILES['profile']['tmp_name'];
@@ -88,6 +88,7 @@ if(isset($_POST['register'])){
 
 
     print_r($_FILES);
+    print_r($response);
 
 
     if ($response == null) {
@@ -179,7 +180,7 @@ if(isset($_POST['login'])) {
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label for="location">Location(County)</label>
-                                            <select class="form-control" type="text" name="location" id="location" placeholder="Location">
+                                            <select class="form-control" name="location" id="location" placeholder="Location">
                                                 <option value="Mombasa">Mombasa</option>
                                                 <option value="Nairobi">Nairobi</option>
                                                 <option value="Kisumu">Kisumu</option>
