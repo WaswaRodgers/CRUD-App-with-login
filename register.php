@@ -92,6 +92,7 @@ if(isset($_POST['register'])){
 
     if ($response == null) {
         if(move_uploaded_file($image_temp, $image_path)) {
+            print_r($response);
             $sql = "INSERT INTO mydetails (firstname, lastname, gender, location, email, phone, address, password, image) VALUES('$firstname', '$lastname', '$gender', '$location', '$email', '$phone', '$address', '$password', '$image_name')";
             $query = mysqli_query($db_connection, $sql);
             print_r($query);
@@ -156,7 +157,7 @@ if(isset($_POST['login'])) {
                         <div class="col-md-12 bg-light text-dark">
                             <div class='messagesuccessone' role='alert'></div>
                             <div class='messagefail' role='alert'></div>
-                            <form id="ajaxpost" method="post" enctype="multipart/form-data" action="">
+                            <form id="ajaxpost" method="post" enctype="multipart/form-data" action="<?php echo $_SERVER['PHP_SELF']; ?>">
                                 <div class="row">
                                     <div class="col-md-4">
                                         <div class="form-group  has-error">
