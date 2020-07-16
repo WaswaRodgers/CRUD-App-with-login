@@ -3,6 +3,11 @@
 <head>
 	<title>Crud App Profile</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<style type="text/css">
+		.details_list {
+			border: 1px solid brown;
+		}
+	</style>
 </head>
 <body>
 	<nav class="navbar navbar-light bg-info navbar-expand-lg">
@@ -28,10 +33,20 @@
             </div>
         </nav>
         <div class="container">
-        	<div class="row mt-3">
-                <div class="col-md-4 offset-4 rounded-circle">
+        	<div class="row">
+                <div class="col-md-4 offset-4">
                     <img src="images/image1.jpg" class="rounded-circle" width="100%">
                 </div>
+            </div>
+            <div class="details">
+            	<h2 class="bg-info text-center">My Details</h2>
+            	<div class="details_list justify-content-center text-center">
+            		<h3 style="font-weight: bold;">Name: Waswa Rodgers</h3>
+            		<h4>Location: Lutacho, Webuye</h4>
+            		<h4>Email: waswam1994@gmail.com</h4>
+            		<h4>Gender: Male</h4>
+            		<h4>Phone No: 0702261867</h4>
+            	</div>
             </div>
         </div>
 
