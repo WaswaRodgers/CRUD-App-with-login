@@ -27,6 +27,13 @@
                 </ul>
             </div>
         </nav>
+        <div class="container">
+        	<div class="row mt-3">
+                <div class="col-md-4 offset-4 rounded-circle">
+                    <img src="images/image1.jpg" class="rounded-circle" width="100%">
+                </div>
+            </div>
+        </div>
 
 </body>
 </html>
