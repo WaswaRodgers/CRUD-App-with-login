@@ -7,7 +7,7 @@
 <body>
 	<nav class="navbar navbar-light bg-info navbar-expand-lg">
             <a class="navbar-brand">
-                MyDetails App
+                <img src="images/wr logo.png" alt="Logo" width="50">MyDetails App
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-expanded="false">
                 <span class="navbar-toggler-icon"></span>
