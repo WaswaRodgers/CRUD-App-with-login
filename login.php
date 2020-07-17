@@ -1,3 +1,18 @@
+<?php 
+	include_once('includes/connect.php');
+
+	if(isset($_POST['login'])) {
+		$username = mysqli_real_escape_string($db_connection, $_POST['username']);
+    	$password = mysqli_real_escape_string($db_connection, $_POST['password']);
+    	echo($username.' and '.$password);
+	}
+?>
+
+
+
+
+
+
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <div class="container-fluid">
