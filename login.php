@@ -18,6 +18,17 @@
 
     	if($response == null) {
     		$sql = "SELECT * FROM mydetails WHERE email = '$username' AND password = '$password'";
+    		$query = mysqli_query($db_connection, $sql);
+    		$rows = mysqli_num_rows($query);
+
+    		if($rows == 1) {
+    			while($result = mysqli_fetch_assoc($query)) {
+    				echo $result['firstname']." ".$result['lastname'];
+    			}
+    		} else {
+    			echo "Confirm your login details!";
+    		}
+    	
     	}
 	}
 ?>
