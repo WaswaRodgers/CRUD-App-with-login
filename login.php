@@ -23,7 +23,7 @@
 
     		if($rows == 1) {
     			while($result = mysqli_fetch_assoc($query)) {
-    				echo $result['firstname']." ".$result['lastname'];
+    				header("Location: profile.php");
     			}
     		} else {
     			echo "Confirm your login details!";
