@@ -1,5 +1,6 @@
 <?php
 include_once('includes/connect.php');
+error_reporting(1);
 
 if(isset($_POST['register'])){
 
@@ -22,7 +23,7 @@ if(isset($_POST['register'])){
     $actual_ext = strtolower(end($image_ext));
     $imageSize = 5000 * 5000;
     $allowed_ext = ["jpg", "jpeg", "png", "gif"];
-    $response;
+    $response = array();
     
     move_uploaded_file($image_temp, $image_path);
 
@@ -235,8 +236,8 @@ if(isset($_POST['login'])) {
                                     <div class="row col-md-12">
                                         <div class="form-group col-md-4">
                                             <label>Gender</label>
-                                            <input type="radio" name="gender" id="male" value="m">Male
-                                            <input type="radio" name="gender" id="female" value="f">Female
+                                            <input type="radio" name="gender" value="m">Male
+                                            <input type="radio" name="gender" value="f">Female
                                             <span class="text-danger passworderror"><?php echo $response['gender_empty']; ?></span>
                                         </div> 
                                     </div>
