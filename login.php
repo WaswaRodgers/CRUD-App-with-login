@@ -1,10 +1,20 @@
 <?php 
 	include_once('includes/connect.php');
+	error_reporting(1);
 
 	if(isset($_POST['login'])) {
 		$username = mysqli_real_escape_string($db_connection, $_POST['username']);
     	$password = mysqli_real_escape_string($db_connection, $_POST['password']);
-    	echo($username.' and '.$password);
+    	$response;
+
+
+    	if(empty($username)) {
+    		$response['username_empty'] .= "Please enter Username";
+    	}
+
+    	if(empty($password)) {
+    		$response['password_empty'] .= "Please enter Password";
+    	}
 	}
 ?>
 
@@ -40,11 +50,13 @@
 				<div class="row col-md-8 m-auto">
 					<div class="row col-md-12 form-group"> 
 						<label for="username">Username</label> 
-						<input type="text" class="form-control" id="username" name="username" placeholder="Username"> 
+						<input type="text" class="form-control" id="username" name="username" placeholder="Username">
+						<span class="text-danger"><?php echo $response['username_empty']; ?></span>
 					</div> 
 					<div class="row col-md-12 form-group"> 
 						<label for="password">Password</label> 
-						<input type="password" class="form-control" id="password" name="password" placeholder=""> 
+						<input type="password" class="form-control" id="password" name="password" placeholder="">
+						<span class="text-danger"><?php echo $response['password_empty']; ?></span> 
 					</div> 
 					<div class="row col-md-12">
 	                    <button name="login" type="submit" class="btn btn-success btn-block">Login</button>
