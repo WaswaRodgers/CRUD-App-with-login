@@ -89,11 +89,11 @@ if(isset($_POST['register'])){
 
 
     print_r($_FILES);
-    print_r($response);
+   
 
 
     if ($response == null) {
-        if(move_uploaded_file($image_temp, $image_path)) {
+        if($image_error == 0) {
             print_r($response);
             $sql = "INSERT INTO mydetails (firstname, lastname, gender, location, email, phone, address, password, image) VALUES('$firstname', '$lastname', '$gender', '$location', '$email', '$phone', '$address', '$password', '$image_name')";
             $query = mysqli_query($db_connection, $sql);
