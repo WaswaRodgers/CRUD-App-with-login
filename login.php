@@ -15,6 +15,10 @@
     	if(empty($password)) {
     		$response['password_empty'] .= "Please enter Password";
     	}
+
+    	if($response == null) {
+    		$sql = "SELECT * FROM mydetails WHERE email = '$username' AND password = '$password'";
+    	}
 	}
 ?>
 
