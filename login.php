@@ -26,6 +26,7 @@
     			while($result = mysqli_fetch_assoc($query)) {
 					$_SESSION['firstname'] = $result['firstname'];
 					$_SESSION['lastname'] = $result['lastname'];
+					$_SESSION['image'] = $result['image'];
     				header("Location: profile.php");
     			}
     		} else {

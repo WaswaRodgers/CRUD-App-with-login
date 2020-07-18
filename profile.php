@@ -4,7 +4,7 @@
 
     $firstname = $_SESSION['firstname'];
     $lastname = $_SESSION['lastname'];
-
+    $profile_picture = $_SESSION['image'];
     
 ?>
 <!DOCTYPE html>
@@ -42,10 +42,10 @@
             </div>
         </nav>
         <div class="container">
-        	<div class="row">
-                <h2 class="bg-info"><?php echo "Welcome".$firstname." ".$lastname; ?></h2>
-                <div class="col-md-4 offset-4">
-                    <img src="images/image1.jpg" class="rounded-circle" width="100%">
+        	<div class="row mt-2">
+                <h2 class="text-success mx-auto"><?php echo "Welcome ".$firstname." ".$lastname; ?></h2>
+                <div class="col-md-4">
+                    <img src="images/<?php echo $profile_picture; ?>" class="rounded-circle" width="50%">
                 </div>
             </div>
             <div class="details">
