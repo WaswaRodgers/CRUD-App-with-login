@@ -1,3 +1,12 @@
+<?php 
+    session_start();
+    include_once('includes/connect.php');
+
+    $firstname = $_SESSION['firstname'];
+    $lastname = $_SESSION['lastname'];
+
+    
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,6 +43,7 @@
         </nav>
         <div class="container">
         	<div class="row">
+                <h2 class="bg-info"><?php echo "Welcome".$firstname." ".$lastname; ?></h2>
                 <div class="col-md-4 offset-4">
                     <img src="images/image1.jpg" class="rounded-circle" width="100%">
                 </div>

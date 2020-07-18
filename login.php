@@ -1,4 +1,5 @@
 <?php 
+	session_start();
 	include_once('includes/connect.php');
 	error_reporting(1);
 
@@ -23,6 +24,8 @@
 
     		if($rows == 1) {
     			while($result = mysqli_fetch_assoc($query)) {
+					$_SESSION['firstname'] = $result['firstname'];
+					$_SESSION['lastname'] = $result['lastname'];
     				header("Location: profile.php");
     			}
     		} else {
