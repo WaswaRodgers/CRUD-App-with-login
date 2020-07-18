@@ -30,6 +30,7 @@
 					$_SESSION['phone'] = $result['phone'];
 					$_SESSION['email'] = $result['email'];
 					$_SESSION['location'] = $result['location'];
+					$_SESSION['gender'] = $result['gender'];
     				header("Location: profile.php");
     			}
     		} else {

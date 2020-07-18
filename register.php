@@ -236,8 +236,8 @@ if(isset($_POST['login'])) {
                                     <div class="row col-md-12">
                                         <div class="form-group col-md-4">
                                             <label>Gender</label>
-                                            <input type="radio" name="gender" value="m">Male
-                                            <input type="radio" name="gender" value="f">Female
+                                            <input type="radio" name="gender" value="Male">Male
+                                            <input type="radio" name="gender" value="Female">Female
                                             <span class="text-danger passworderror"><?php echo $response['gender_empty']; ?></span>
                                         </div> 
                                     </div>

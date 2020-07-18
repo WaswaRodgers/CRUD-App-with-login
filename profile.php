@@ -8,6 +8,7 @@
     $phone = $_SESSION['phone'];
     $email = $_SESSION['email'];
     $location = $_SESSION['location'];
+    $gender = $_SESSION['gender'];
     
 ?>
 <!DOCTYPE html>
@@ -56,11 +57,11 @@
             <div class="details">
             	<h2 class="bg-warning text-center">My Details</h2>
             	<div class="details_list justify-content-center text-center">
-            		<h3 style="font-weight: bold;">Name: Waswa Rodgers</h3>
-            		<h4>Location: Lutacho, Webuye</h4>
-            		<h4>Email: waswam1994@gmail.com</h4>
-            		<h4>Gender: Male</h4>
-            		<h4>Phone No: 0702261867</h4>
+            		<h3 style="font-weight: bold;">Name: <?php echo $firstname." ".$lastname; ?></h3>
+            		<h4>Location: <?php echo $location; ?></h4>
+            		<h4>Email: <?php echo $email; ?></h4>
+            		<h4>Gender: <?php echo $gender; ?></h4>
+            		<h4>Phone No: <?php echo $phone; ?></h4>
             	</div>
             </div>
         </div>
