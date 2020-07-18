@@ -94,7 +94,7 @@ if(isset($_POST['register'])){
 
     if ($response == null) {
         if($image_error == 0) {
-            print_r($response);
+           
             $sql = "INSERT INTO mydetails (firstname, lastname, gender, location, email, phone, address, password, image) VALUES('$firstname', '$lastname', '$gender', '$location', '$email', '$phone', '$address', '$password', '$image_name')";
             $query = mysqli_query($db_connection, $sql);
             print_r($query);
