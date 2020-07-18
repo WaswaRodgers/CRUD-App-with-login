@@ -5,6 +5,9 @@
     $firstname = $_SESSION['firstname'];
     $lastname = $_SESSION['lastname'];
     $profile_picture = $_SESSION['image'];
+    $phone = $_SESSION['phone'];
+    $email = $_SESSION['email'];
+    $location = $_SESSION['location'];
     
 ?>
 <!DOCTYPE html>
@@ -42,14 +45,16 @@
             </div>
         </nav>
         <div class="container">
-        	<div class="row mt-2">
-                <h2 class="text-success mx-auto"><?php echo "Welcome ".$firstname." ".$lastname; ?></h2>
-                <div class="col-md-4">
-                    <img src="images/<?php echo $profile_picture; ?>" class="rounded-circle" width="50%">
-                </div>
+            <div class="row text-success justify-content-center text-center">
+                <h2><?php echo "Welcome ".$firstname." ".$lastname; ?></h2>
+            </div>
+        	<div class="row col-md-4 offset-4 rounded-circle mt-1">
+              
+                <img src="images/<?php echo $profile_picture; ?>" class="rounded-circle" width="100%">
+        
             </div>
             <div class="details">
-            	<h2 class="bg-info text-center">My Details</h2>
+            	<h2 class="bg-warning text-center">My Details</h2>
             	<div class="details_list justify-content-center text-center">
             		<h3 style="font-weight: bold;">Name: Waswa Rodgers</h3>
             		<h4>Location: Lutacho, Webuye</h4>

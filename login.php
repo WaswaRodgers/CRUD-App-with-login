@@ -27,6 +27,9 @@
 					$_SESSION['firstname'] = $result['firstname'];
 					$_SESSION['lastname'] = $result['lastname'];
 					$_SESSION['image'] = $result['image'];
+					$_SESSION['phone'] = $result['phone'];
+					$_SESSION['email'] = $result['email'];
+					$_SESSION['location'] = $result['location'];
     				header("Location: profile.php");
     			}
     		} else {
