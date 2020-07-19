@@ -47,20 +47,14 @@
             </div>
         </nav>
         <div class="container">
-            <div class="row text-success justify-content-center text-center">
-                <h2><?php echo "Welcome ".$firstname." ".$lastname; ?></h2>
-            </div>
-        	
-           
-                
-
+            
             <div class="row col-md-12 user_details">
-                    <h2 class="bg-warning text-center col-md-12">My Details</h2>
+                    <h2 class="bg-secondary text-center text-white col-md-12"><?php echo "Welcome ".$firstname." ".$lastname; ?></h2>
                     <div class="user_details_list justify-content-center">
                         
                         <div class="col-md-4 rounded-circle mt-1">
                 
-                            <img src="images/<?php echo $profile_picture; ?>" class="rounded-circle" width="100%">
+                            <img src="images/<?php echo $profile_picture; ?>" class="rounded-circle" width="70%">
     
                         </div>
 
@@ -71,6 +65,19 @@
                             <h4>Gender: <?php echo $gender; ?></h4>
                             <h4>Phone No: <?php echo $phone; ?></h4>
                         </div>
+                    </div>
+                    <div class="row col-md-12 justify-content-center">
+                        
+                        <div class="form-group m-1">
+                            <button class="btn btn-primary">Compose CV</button>
+                        </div>
+                        <div class="form-group m-1">
+                            <button class="btn btn-info">View CV</button>
+                        </div>
+                        <div class="form-group m-1">
+                            <button class="btn btn-success">Edit Profile</button>
+                        </div>
+                    
                     </div>
             </div> 
            
