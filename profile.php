@@ -73,13 +73,13 @@
                     <div class="row col-md-12 justify-content-center">
                         <form method="post" action="my_cv_actions.php">
                             <div class="form-group m-1">
-                                <button class="btn btn-primary">Compose CV</button>
+                                <button name="compose_cv" class="btn btn-primary">Compose CV</button>
                             </div>
                             <div class="form-group m-1">
-                                <button class="btn btn-info">View CV</button>
+                                <button name="view_cv" class="btn btn-info">View CV</button>
                             </div>
                             <div class="form-group m-1">
-                                <button class="btn btn-success">Edit Profile</button>
+                                <button name="edit_profile" class="btn btn-success">Edit Profile</button>
                             </div>
                         </form>
                     
