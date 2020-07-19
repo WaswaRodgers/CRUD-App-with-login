@@ -21,6 +21,10 @@
 			border: 1px solid brown;
             display:flex;
 		}
+
+        form {
+            display: flex;
+        }
 	</style>
 </head>
 <body>
@@ -67,16 +71,17 @@
                         </div>
                     </div>
                     <div class="row col-md-12 justify-content-center">
-                        
-                        <div class="form-group m-1">
-                            <button class="btn btn-primary">Compose CV</button>
-                        </div>
-                        <div class="form-group m-1">
-                            <button class="btn btn-info">View CV</button>
-                        </div>
-                        <div class="form-group m-1">
-                            <button class="btn btn-success">Edit Profile</button>
-                        </div>
+                        <form method="post" action="my_cv_actions.php">
+                            <div class="form-group m-1">
+                                <button class="btn btn-primary">Compose CV</button>
+                            </div>
+                            <div class="form-group m-1">
+                                <button class="btn btn-info">View CV</button>
+                            </div>
+                            <div class="form-group m-1">
+                                <button class="btn btn-success">Edit Profile</button>
+                            </div>
+                        </form>
                     
                     </div>
             </div> 
