@@ -17,8 +17,9 @@
 	<title>Crud App Profile</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<style type="text/css">
-		.details_list {
+		.user_details_list {
 			border: 1px solid brown;
+            display:flex;
 		}
 	</style>
 </head>
@@ -49,21 +50,30 @@
             <div class="row text-success justify-content-center text-center">
                 <h2><?php echo "Welcome ".$firstname." ".$lastname; ?></h2>
             </div>
-        	<div class="row col-md-4 offset-4 rounded-circle mt-1">
-              
-                <img src="images/<?php echo $profile_picture; ?>" class="rounded-circle" width="100%">
-        
-            </div>
-            <div class="details">
-            	<h2 class="bg-warning text-center">My Details</h2>
-            	<div class="details_list justify-content-center text-center">
-            		<h3 style="font-weight: bold;">Name: <?php echo $firstname." ".$lastname; ?></h3>
-            		<h4>Location: <?php echo $location; ?></h4>
-            		<h4>Email: <?php echo $email; ?></h4>
-            		<h4>Gender: <?php echo $gender; ?></h4>
-            		<h4>Phone No: <?php echo $phone; ?></h4>
-            	</div>
-            </div>
+        	
+           
+                
+
+            <div class="row col-md-12 user_details">
+                    <h2 class="bg-warning text-center col-md-12">My Details</h2>
+                    <div class="user_details_list justify-content-center">
+                        
+                        <div class="col-md-4 rounded-circle mt-1">
+                
+                            <img src="images/<?php echo $profile_picture; ?>" class="rounded-circle" width="100%">
+    
+                        </div>
+
+                        <div class="col-md-8 details_list">
+                            <h3 style="font-weight: bold;">Name: <?php echo $firstname." ".$lastname; ?></h3>
+                            <h4>Location: <?php echo $location; ?></h4>
+                            <h4>Email: <?php echo $email; ?></h4>
+                            <h4>Gender: <?php echo $gender; ?></h4>
+                            <h4>Phone No: <?php echo $phone; ?></h4>
+                        </div>
+                    </div>
+            </div> 
+           
         </div>
 
 </body>
